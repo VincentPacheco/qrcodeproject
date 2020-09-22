@@ -1,0 +1,33 @@
+<% if  @order.id == nil %>
+  <div class="footer">
+    <div class=" <%=  menu_index? ? 'footerblue' : 'footergrey' %>">
+      <%= link_to new_table_order_path(@table) do %>
+        <i class="fas fa-book-open"></i>
+      <% end %>
+    </div>
+    <div class=" <%=  cart_index? ? 'footerblue' : 'footergrey' %>">
+      <%= link_to new_table_order_path(@table) do %>
+        <i class="fas fa-shopping-cart"></i>
+<!--         <div class='count'>
+          <span id="sum"></span>
+        </div> -->
+      <% end %>
+    </div>
+  </div>
+<% else %>
+  <div class="footer">
+    <div class=" <%=  menu_edit? ? 'footerblue' : 'footergrey' %>">
+      <%= link_to edit_table_order_path(@order.table, @order), class: "btn-back", data: { turbolinks: 'false' } do %>
+        <i class="fas fa-book-open"></i>
+      <% end %>
+    </div>
+    <div class=" <%=  cart_index? ? 'footerblue' : 'footergrey' %>">
+      <%= link_to confirmation_table_order_path(@order.table, @order) do %>
+        <i class="fas fa-shopping-cart"></i>
+<!--    <div class='count'>
+          <span id="sum"></span>
+        </div> -->
+      <% end %>
+    </div>
+  </div>
+<% end %>
