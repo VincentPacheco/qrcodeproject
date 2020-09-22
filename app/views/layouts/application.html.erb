@@ -11,10 +11,16 @@
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload', defer: true %>
   </head>
 
-  <body>
-    <%= render 'shared/navbar' %>
-    <%= render 'shared/flashes' %>
-
-    <%= yield %>
-  </body>
-</html>
+    <body id="<%= controller_name %>-<%= action_name %>">
+      <% unless controller_name == "pages" && action_name == "home" %>
+        <%= render 'shared/navbar' %>
+      <% end %>
+      <%= render 'shared/flashes' %>
+      <div class=<%= 'container' unless ['orders'].include?(controller_name) && ['edit', 'show'].include?(action_name) %>>
+        <%= yield %>
+      </div>
+      <% unless ['pages', 'orders', 'basic_qr_codes','qr_codes','orders'].include?(controller_name) && ['home', 'edit', 'index','new','show'].include?(action_name) %>
+        <%= render 'shared/footer' %>
+      <% end %>
+    </body>
+  </html>

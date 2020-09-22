@@ -1,0 +1,34 @@
+.searchbar {
+  width: 100%;
+  height: 40px;
+  border-radius: 31px;
+  border: none;
+  background-color: #f1f7f7;
+  font-size: 18px;
+  padding-left: 15px;
+  margin-bottom: 20px;
+}
+
+input {
+  font-size: 13px;
+  font-weight: light;
+  color: #6A6A6A;
+  font-size: 1.5em;
+}
+
+
+.search-input {
+  display: flex;
+  position: relative;
+}
+
+.clear-input {
+  position: absolute;
+  right: 21%;
+  top: 10%;
+  color: grey;
+}
+
+.fas .fa-search {
+  color: white;
+}
