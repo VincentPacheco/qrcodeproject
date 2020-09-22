@@ -1,0 +1,2 @@
+class CategoryDish < ApplicationRecord
+end
