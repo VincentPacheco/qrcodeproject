@@ -14,7 +14,7 @@ class TablePolicy < ApplicationPolicy
   def update?
     record.user == user
     # - record: the travel passed to the `authorize` method in controller
-    # - user:   the `current_user` signed in with Devise.
+    # - user:   the `current_user` signed in with Devise. N
   end
 
   def destroy?
